@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRIBU BOX | Entrenamiento gimnastico en grupo</title>
+  <meta name="description" content="TRIBU BOX. Entrenamiento gimnastico en grupo en Villa Angela. Training, funcional, Muay Thai y Pilates. Escribinos por WhatsApp." />
+
+  <meta property="og:title" content="TRIBU BOX | Entrenamiento gimnastico en grupo" />
+  <meta property="og:description" content="Se parte de La Tribu. Training, funcional, Muay Thai y Pilates en Villa Angela." />
+  <meta property="og:image" content="https://iili.io/qTOv0zJ.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TRIBU BOX | Entrenamiento gimnastico en grupo" />
+  <meta name="twitter:description" content="Training, funcional, Muay Thai y Pilates en grupo. Villa Angela." />
+  <meta name="twitter:image" content="https://iili.io/qTOv0zJ.jpg" />
+
+  <style>
+    :root{
+      --bg:#0a0a0a;
+      --bg-soft:#111111;
+      --card:#171717;
+      --card-2:#1d1d1d;
+      --text:#f5f5f5;
+      --muted:#c8c8c8;
+      --line:rgba(255,255,255,.1);
+      --accent:#f97316;
+      --accent-2:#facc15;
+      --shadow:0 20px 60px rgba(0,0,0,.35);
+      --radius:24px;
+      --radius-sm:18px;
+      --container:1180px;
+      --hero-overlay:linear-gradient(180deg, rgba(0,0,0,.40) 0%, rgba(0,0,0,.58) 42%, rgba(0,0,0,.82) 100%);
+      --global-overlay:rgba(0,0,0,.56);
+    }
+
+    body.light{
+      --bg:#f6f6f3;
+      --bg-soft:#ffffff;
+      --card:rgba(255,255,255,.88);
+      --card-2:rgba(255,255,255,.96);
+      --text:#111111;
+      --muted:#4f4f4f;
+      --line:rgba(0,0,0,.1);
+      --accent:#ea580c;
+      --accent-2:#ca8a04;
+      --shadow:0 20px 60px rgba(0,0,0,.10);
+      --hero-overlay:linear-gradient(180deg, rgba(255,255,255,.10) 0%, rgba(255,255,255,.22) 40%, rgba(246,246,243,.84) 100%);
+      --global-overlay:rgba(255,255,255,.35);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+      overflow-x:hidden;
+      position:relative;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:
+        linear-gradient(var(--global-overlay),var(--global-overlay)),
+        url("https://iili.io/qTNTjx2.jpg") center/cover no-repeat;
+      z-index:-2;
+      pointer-events:none;
+    }
+
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:
+        radial-gradient(circle at top left, rgba(249,115,22,.12), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(250,204,21,.10), transparent 28%);
+      z-index:-1;
+      pointer-events:none;
+    }
+
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+
+    .container{
+      width:min(calc(100% - 32px), var(--container));
+      margin:0 auto;
+    }
+
+    .section{
+      padding:84px 0;
+    }
+
+    .section-title{
+      font-size:clamp(1.9rem, 3.5vw, 3.1rem);
+      line-height:1.05;
+      margin:0 0 14px;
+      letter-spacing:-.03em;
+    }
+
+    .section-subtitle{
+      max-width:760px;
+      color:var(--muted);
+      margin:0;
+      font-size:1.04rem;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(14px);
+      background:rgba(10,10,10,.55);
+      border-bottom:1px solid rgba(255,255,255,.07);
+    }
+
+    body.light .topbar{
+      background:rgba(255,255,255,.62);
+      border-bottom:1px solid rgba(0,0,0,.06);
+    }
+
+    .topbar-inner{
+      min-height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+
+    .brand-logo{
+      width:56px;
+      height:56px;
+      border-radius:50%;
+      object-fit:cover;
+      border:2px solid rgba(255,255,255,.16);
+      box-shadow:var(--shadow);
+      flex:0 0 auto;
+      background:#000;
+    }
+
+    body.light .brand-logo{
+      border-color:rgba(0,0,0,.1);
+    }
+
+    .brand-text{
+      min-width:0;
+    }
+
+    .brand-text strong{
+      display:block;
+      font-size:.98rem;
+      letter-spacing:.08em;
+    }
+
+    .brand-text span{
+      display:block;
+      color:var(--muted);
+      font-size:.85rem;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .nav a,
+    .theme-toggle{
+      padding:11px 15px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:600;
+      font-size:.92rem;
+      transition:.25s ease;
+      cursor:pointer;
+    }
+
+    body.light .nav a,
+    body.light .theme-toggle{
+      background:rgba(255,255,255,.75);
+    }
+
+    .nav a:hover,
+    .theme-toggle:hover{
+      transform:translateY(-1px);
+      border-color:rgba(249,115,22,.42);
+    }
+
+    .nav .cta{
+      background:linear-gradient(135deg, var(--accent), var(--accent-2));
+      color:#111;
+      border:none;
+    }
+
+    .hero{
+      padding:34px 0 42px;
+    }
+
+    .hero-card{
+      position:relative;
+      overflow:hidden;
+      border-radius:32px;
+      min-height:720px;
+      background:
+        var(--hero-overlay),
+        url("https://iili.io/qTOv0zJ.jpg") center top/cover no-repeat;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(255,255,255,.08);
+      display:flex;
+      align-items:flex-end;
+    }
+
+    body.light .hero-card{
+      border-color:rgba(0,0,0,.06);
+    }
+
+    .hero-grid{
+      width:100%;
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:30px;
+      align-items:end;
+      padding:42px;
+    }
+
+    .hero-copy{
+      max-width:700px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 16px;
+      border-radius:999px;
+      background:rgba(0,0,0,.38);
+      border:1px solid rgba(255,255,255,.14);
+      color:#fff;
+      font-size:.92rem;
+      font-weight:700;
+      margin-bottom:18px;
+      backdrop-filter:blur(10px);
+    }
+
+    body.light .eyebrow{
+      background:rgba(255,255,255,.72);
+      color:#111;
+      border-color:rgba(0,0,0,.08);
+    }
+
+    .hero h1{
+      margin:0 0 16px;
+      font-size:clamp(2.4rem, 6vw, 5.25rem);
+      line-height:.96;
+      letter-spacing:-.05em;
+      text-transform:uppercase;
+      max-width:9ch;
+      text-wrap:balance;
+      text-shadow:0 10px 26px rgba(0,0,0,.35);
+    }
+
+    .hero p{
+      margin:0 0 22px;
+      font-size:clamp(1rem, 1.6vw, 1.13rem);
+      max-width:640px;
+      color:#f0f0f0;
+      text-shadow:0 8px 18px rgba(0,0,0,.34);
+    }
+
+    body.light .hero p{
+      color:#1f1f1f;
+      text-shadow:none;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom:18px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 20px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:.96rem;
+      transition:.25s ease;
+      border:1px solid transparent;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--accent), var(--accent-2));
+      color:#111;
+      box-shadow:0 14px 28px rgba(249,115,22,.25);
+    }
+
+    .btn-secondary{
+      background:rgba(0,0,0,.28);
+      color:#fff;
+      border-color:rgba(255,255,255,.16);
+      backdrop-filter:blur(10px);
+    }
+
+    body.light .btn-secondary{
+      background:rgba(255,255,255,.72);
+      color:#111;
+      border-color:rgba(0,0,0,.08);
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .hero-chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .chip{
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(0,0,0,.32);
+      color:#fff;
+      font-weight:700;
+      font-size:.88rem;
+      backdrop-filter:blur(10px);
+    }
+
+    body.light .chip{
+      background:rgba(255,255,255,.78);
+      color:#111;
+      border-color:rgba(0,0,0,.08);
+    }
+
+    .hero-side{
+      display:flex;
+      justify-content:flex-end;
+      align-items:flex-end;
+    }
+
+    .hero-logo-card{
+      width:min(100%, 340px);
+      padding:22px;
+      border-radius:28px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.26);
+      backdrop-filter:blur(14px);
+      box-shadow:var(--shadow);
+    }
+
+    body.light .hero-logo-card{
+      background:rgba(255,255,255,.72);
+      border-color:rgba(0,0,0,.08);
+    }
+
+    .hero-logo{
+      width:100%;
+      aspect-ratio:1/1;
+      border-radius:50%;
+      object-fit:cover;
+      border:3px solid rgba(255,255,255,.14);
+      background:#000;
+    }
+
+    body.light .hero-logo{
+      border-color:rgba(0,0,0,.08);
+    }
+
+    .hero-location{
+      margin-top:16px;
+      color:var(--muted);
+      font-weight:600;
+      text-align:center;
+      font-size:.96rem;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1.02fr .98fr;
+      gap:24px;
+      align-items:start;
+      margin-top:34px;
+    }
+
+    .glass{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .about-copy{
+      padding:32px;
+    }
+
+    .about-copy p{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:1.02rem;
+    }
+
+    .about-bullets{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .about-bullets div{
+      padding:16px 18px;
+      background:var(--card-2);
+      border:1px solid var(--line);
+      border-radius:18px;
+      font-weight:700;
+    }
+
+    .about-image{
+      min-height:100%;
+      position:relative;
+    }
+
+    .about-image img{
+      width:100%;
+      height:100%;
+      min-height:440px;
+      object-fit:cover;
+    }
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:22px;
+      margin-top:34px;
+    }
+
+    .service-card{
+      overflow:hidden;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:28px;
+      box-shadow:var(--shadow);
+    }
+
+    .service-card img{
+      width:100%;
+      aspect-ratio:4/4.2;
+      object-fit:cover;
+    }
+
+    .service-body{
+      padding:22px;
+    }
+
+    .service-body h3{
+      margin:0 0 10px;
+      font-size:1.34rem;
+      letter-spacing:-.02em;
+    }
+
+    .service-body p{
+      margin:0;
+      color:var(--muted);
+      font-size:.98rem;
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:18px;
+      margin-top:34px;
+    }
+
+    .gallery-item{
+      position:relative;
+      overflow:hidden;
+      border-radius:24px;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      min-height:280px;
+      background:#0f0f0f;
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .5s ease;
+    }
+
+    .gallery-item:hover img{
+      transform:scale(1.04);
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:18px;
+      margin-top:34px;
+    }
+
+    .stat{
+      padding:24px;
+      border-radius:22px;
+      background:var(--card);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      text-align:center;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:clamp(1.7rem, 4vw, 2.4rem);
+      line-height:1;
+      margin-bottom:10px;
+      color:var(--accent);
+    }
+
+    .stat span{
+      display:block;
+      color:var(--muted);
+      font-weight:600;
+      font-size:.95rem;
+    }
+
+    .cta-box{
+      padding:34px;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:24px;
+      align-items:center;
+      background:
+        linear-gradient(135deg, rgba(249,115,22,.16), rgba(250,204,21,.12)),
+        var(--card);
+      border-radius:28px;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      margin-top:32px;
+    }
+
+    .cta-box h3{
+      margin:0 0 10px;
+      font-size:clamp(1.6rem, 3vw, 2.4rem);
+      line-height:1.05;
+      letter-spacing:-.03em;
+    }
+
+    .cta-box p{
+      margin:0;
+      color:var(--muted);
+      max-width:720px;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+      margin-top:34px;
+    }
+
+    .contact-card{
+      padding:30px;
+      border-radius:28px;
+      background:var(--card);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+
+    .contact-card h3{
+      margin:0 0 14px;
+      font-size:1.45rem;
+      letter-spacing:-.02em;
+    }
+
+    .contact-card p{
+      margin:0 0 12px;
+      color:var(--muted);
+    }
+
+    .contact-list{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .contact-item{
+      padding:16px 18px;
+      border-radius:18px;
+      background:var(--card-2);
+      border:1px solid var(--line);
+      font-weight:700;
+    }
+
+    footer{
+      padding:32px 0 120px;
+      position:relative;
+      z-index:3;
+    }
+
+    .footer-wrap{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:22px 24px;
+      border-radius:22px;
+      background:var(--card);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+
+    .footer-wrap p{
+      margin:0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .footer-wrap a.brand-link{
+      color:var(--accent);
+      font-weight:800;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#25D366;
+      box-shadow:0 16px 32px rgba(0,0,0,.25);
+      z-index:40;
+      transition:transform .25s ease, box-shadow .25s ease, opacity .25s ease;
+    }
+
+    .whatsapp-float:hover{
+      transform:translateY(-2px) scale(1.03);
+    }
+
+    .whatsapp-float img{
+      width:34px;
+      height:34px;
+      object-fit:contain;
+    }
+
+    @media (max-width: 1100px){
+      .hero-grid,
+      .about-grid,
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+
+      .services-grid{
+        grid-template-columns:repeat(2, minmax(0,1fr));
+      }
+
+      .gallery-grid{
+        grid-template-columns:repeat(2, minmax(0,1fr));
+      }
+
+      .stats{
+        grid-template-columns:repeat(2, minmax(0,1fr));
+      }
+
+      .hero-side{
+        justify-content:flex-start;
+      }
+
+      .cta-box{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 720px){
+      .container{
+        width:min(calc(100% - 20px), var(--container));
+      }
+
+      .topbar-inner{
+        min-height:auto;
+        padding:12px 0;
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .nav{
+        width:100%;
+        justify-content:flex-start;
+      }
+
+      .nav a,
+      .theme-toggle{
+        padding:10px 13px;
+        font-size:.88rem;
+      }
+
+      .hero{
+        padding:20px 0 24px;
+      }
+
+      .hero-card{
+        min-height:auto;
+        background:
+          var(--hero-overlay),
+          url("https://iili.io/qTOv0zJ.jpg") center top/cover no-repeat;
+      }
+
+      .hero-grid{
+        padding:22px 16px 18px;
+        gap:18px;
+      }
+
+      .hero h1{
+        max-width:100%;
+        font-size:clamp(2rem, 10vw, 3.2rem);
+      }
+
+      .hero p{
+        font-size:.98rem;
+        max-width:100%;
+      }
+
+      .eyebrow{
+        margin-bottom:14px;
+        font-size:.82rem;
+        padding:9px 12px;
+      }
+
+      .hero-actions{
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .hero-chips{
+        gap:8px;
+      }
+
+      .chip{
+        font-size:.82rem;
+        padding:9px 12px;
+      }
+
+      .hero-logo-card{
+        width:100%;
+        max-width:220px;
+        padding:14px;
+      }
+
+      .about-copy{
+        padding:24px 18px;
+      }
+
+      .about-bullets{
+        grid-template-columns:1fr;
+      }
+
+      .services-grid,
+      .gallery-grid,
+      .stats,
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+
+      .section{
+        padding:64px 0;
+      }
+
+      .cta-box,
+      .contact-card{
+        padding:22px 18px;
+      }
+
+      footer{
+        padding-bottom:110px;
+      }
+
+      .whatsapp-float{
+        right:14px;
+        bottom:14px;
+        width:56px;
+        height:56px;
+      }
+
+      .whatsapp-float img{
+        width:31px;
+        height:31px;
+      }
+    }
+
+    @media (max-width: 420px){
+      .brand-logo{
+        width:50px;
+        height:50px;
+      }
+
+      .brand-text strong{
+        font-size:.9rem;
+      }
+
+      .brand-text span{
+        font-size:.8rem;
+      }
+
+      .hero-grid{
+        padding:18px 14px 16px;
+      }
+
+      .hero-logo-card{
+        max-width:190px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#inicio" class="brand">
+        <img class="brand-logo" src="https://iili.io/qTNzAga.png" alt="Logo TRIBU BOX" />
+        <div class="brand-text">
+          <strong>TRIBU BOX</strong>
+          <span>Entrenamiento gimnastico en grupo</span>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a href="#servicios">Servicios</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#ubicacion">Ubicacion</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">Tema</button>
+        <a class="cta" href="https://wa.me/5493735642062" target="_blank" rel="noopener noreferrer">Escribinos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <span class="eyebrow">SE PARTE DE LA TRIBU</span>
+              <h1>Entrena en grupo con energia real</h1>
+              <p>
+                Un espacio para moverte, superarte y compartir entrenamiento con buena energia.
+                Training, funcional, Muay Thai y Pilates en TRIBU BOX.
+              </p>
+
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="https://wa.me/5493735642062" target="_blank" rel="noopener noreferrer">Quiero info por WhatsApp</a>
+                <a class="btn btn-secondary" href="#servicios">Ver actividades</a>
+              </div>
+
+              <div class="hero-chips">
+                <span class="chip">Training</span>
+                <span class="chip">Funcional</span>
+                <span class="chip">Muay Thai</span>
+                <span class="chip">Pilates</span>
+              </div>
+            </div>
+
+            <div class="hero-side">
+              <div class="hero-logo-card">
+                <img class="hero-logo" src="https://iili.io/qTNzAga.png" alt="Logo redondo de TRIBU BOX" />
+                <div class="hero-location">Esq. Pellegrini e Yrigoyen - Villa Angela</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container">
+        <h2 class="section-title">Movimiento, disciplina y comunidad</h2>
+        <p class="section-subtitle">
+          TRIBU BOX es un espacio pensado para entrenar en grupo, con enfoque en constancia,
+          tecnica, energia y crecimiento personal.
+        </p>
+
+        <div class="about-grid">
+          <div class="glass about-copy">
+            <p>
+              Aca no venis solo a hacer ejercicio. Venis a formar parte de una comunidad que acompaña,
+              empuja y motiva.
+            </p>
+            <p>
+              Cada clase esta pensada para que puedas avanzar a tu ritmo, mejorar tu condicion fisica
+              y sostener el entrenamiento en el tiempo.
+            </p>
+
+            <div class="about-bullets">
+              <div>Entrenamiento grupal</div>
+              <div>Profes reales en accion</div>
+              <div>Variedad de disciplinas</div>
+              <div>Ambiente con actitud</div>
+            </div>
+          </div>
+
+          <div class="glass about-image">
+            <img src="https://iili.io/qTOlpwX.png" alt="Equipo de TRIBU BOX en el gimnasio" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicios">
+      <div class="container">
+        <h2 class="section-title">Actividades</h2>
+        <p class="section-subtitle">
+          Diferentes propuestas para entrenar, mejorar tu condicion fisica y mantenerte en movimiento.
+        </p>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <img src="https://iili.io/qTOGibI.png" alt="Cross training en TRIBU BOX" />
+            <div class="service-body">
+              <h3>Cross Training</h3>
+              <p>Trabajo dinamico, intensidad y variedad para mejorar fuerza, resistencia y rendimiento general.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img src="https://iili.io/qTOGZsn.png" alt="Muay Thai en TRIBU BOX" />
+            <div class="service-body">
+              <h3>Muay Thai</h3>
+              <p>Entrenamiento tecnico y fisico para desarrollar coordinacion, disciplina, potencia y confianza.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img src="https://iili.io/qTOGPON.png" alt="Pilates en TRIBU BOX" />
+            <div class="service-body">
+              <h3>Pilates</h3>
+              <p>Trabajo de control corporal, movilidad y fortalecimiento para complementar tu entrenamiento.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="galeria">
+      <div class="container">
+        <h2 class="section-title">La energia de La Tribu</h2>
+        <p class="section-subtitle">
+          Asi se vive el entrenamiento en TRIBU BOX: movimiento, tecnica, intensidad y compañerismo.
+        </p>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img src="https://iili.io/qTOlpwX.png" alt="Entrenadores frente al cartel de TRIBU BOX" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://iili.io/qTOlytn.png" alt="Grupo entrenando Muay Thai" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://iili.io/qTOlQFR.png" alt="Entrenamiento de accion en TRIBU BOX" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://iili.io/qTOlb9I.png" alt="Entrenamiento funcional en piso" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://iili.io/qTO0Hns.png" alt="Correccion tecnica durante una clase" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://iili.io/qTO0dPf.png" alt="Entrenamiento en grupo en TRIBU BOX" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resultados">
+      <div class="container">
+        <h2 class="section-title">Un lugar para entrenar de verdad</h2>
+        <p class="section-subtitle">
+          Entrenamiento grupal, energia compartida y una propuesta pensada para sostener el habito.
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <strong>+4</strong>
+            <span>Disciplinas activas</span>
+          </div>
+          <div class="stat">
+            <strong>100%</strong>
+            <span>Entrenamiento grupal</span>
+          </div>
+          <div class="stat">
+            <strong>Real</strong>
+            <span>Energia de equipo</span>
+          </div>
+          <div class="stat">
+            <strong>TRIBU</strong>
+            <span>Comunidad y constancia</span>
+          </div>
+        </div>
+
+        <div class="cta-box">
+          <div>
+            <h3>Queres sumarte a entrenar?</h3>
+            <p>
+              Escribinos y te contamos horarios, actividades y como empezar en TRIBU BOX.
+            </p>
+          </div>
+          <a class="btn btn-primary" href="https://wa.me/5493735642062" target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ubicacion">
+      <div class="container">
+        <h2 class="section-title">Contacto y ubicacion</h2>
+        <p class="section-subtitle">
+          Estamos en Villa Angela. Escribinos directo por WhatsApp para consultar informacion.
+        </p>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>TRIBU BOX</h3>
+            <p>Entrenamiento gimnastico en grupo con propuesta dinamica, energia y comunidad.</p>
+
+            <div class="contact-list">
+              <div class="contact-item">Training</div>
+              <div class="contact-item">Funcional</div>
+              <div class="contact-item">Muay Thai</div>
+              <div class="contact-item">Pilates</div>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h3>Datos</h3>
+            <div class="contact-list">
+              <div class="contact-item">Esq. Pellegrini e Yrigoyen - Villa Angela</div>
+              <a class="contact-item" href="https://wa.me/5493735642062" target="_blank" rel="noopener noreferrer">WhatsApp: 5493735642062</a>
+              <div class="contact-item">Escribinos para horarios e info</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-wrap">
+        <p>TRIBU BOX - Entrenamiento gimnastico en grupo</p>
+        <p>Creado y diseñado por <a class="brand-link" href="https://ciborg347oficial.onrender.com" target="_blank" rel="noopener noreferrer">Ciborg 347</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" id="whatsappFloat" href="https://wa.me/5493735642062" target="_blank" rel="noopener noreferrer" aria-label="Escribinos por WhatsApp">
+    <img src="https://iili.io/qBZhqGf.md.png" alt="WhatsApp" />
+  </a>
+
+  <script>
+    const body = document.body;
+    const toggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('tribu-theme');
+
+    if (savedTheme === 'light') {
+      body.classList.add('light');
+    }
+
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('light');
+      localStorage.setItem('tribu-theme', body.classList.contains('light') ? 'light' : 'dark');
+    });
+
+    const whatsappFloat = document.getElementById('whatsappFloat');
+    const footer = document.querySelector('footer');
+
+    function adjustWhatsAppPosition() {
+      const footerRect = footer.getBoundingClientRect();
+      const overlap = window.innerHeight - footerRect.top;
+      if (overlap > 90) {
+        whatsappFloat.style.transform = `translateY(-${overlap - 90}px)`;
+      } else {
+        whatsappFloat.style.transform = 'translateY(0)';
+      }
+    }
+
+    adjustWhatsAppPosition();
+    window.addEventListener('scroll', adjustWhatsAppPosition);
+    window.addEventListener('resize', adjustWhatsAppPosition);
+  </script>
+</body>
+</html>
